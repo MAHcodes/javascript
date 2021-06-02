@@ -1,19 +1,15 @@
 const text = document.getElementById("text");
 const root = document.querySelector("html");
-const black = document.getElementById("black");
-const blue = document.getElementById("dark-blue");
-const purple = document.getElementById("dark-purple");
-const white = document.getElementById("white");
 const wpmText = document.getElementById("wpm");
 const cpmText = document.getElementById("cpm");
 const againBtn = document.getElementById("again");
 const highScore = document.getElementById("best");
-const blackTheme = ["#0f0f0f", "#1e1e1e", "hsl(0, 0%, 25%)", "#f1f1f1"];
-const whiteTheme = ["hsl(0, 0%, 75.6%)", "hsl(0, 0%, 94.1%)", "hsl(0, 0%, 98.4%)", "#2d2d2d"];
-const blueTheme = ["hsl(236, 53%, 16%)", "hsl(236, 44%, 22%)", "hsl(234, 30%, 35%)", "#f1f1f1"];
-const purpleTheme = ["hsl(282.4, 37.8%, 16.6%)", "hsl(282.4, 28.3%, 23.5%)", "hsl(279, 20%, 33%)", "#f1f1f1"];
-againBtn.addEventListener("click", generateQuote);
+const theme = document.querySelectorAll(".colors span");
+let themeColor = "";
+let score = "00";
 
+
+againBtn.addEventListener("click", generateQuote);
 
 let qoute; 
 function generateQuote() {
@@ -22,36 +18,20 @@ function generateQuote() {
     .then(data =>  quote = data.content)
     .then(generateText);
 };
-
 generateQuote();
 
-black.addEventListener("click", () => {
-    document.documentElement.style.setProperty("--main-background", blackTheme[0]);
-    document.documentElement.style.setProperty("--sec-background", blackTheme[1]);
-    document.documentElement.style.setProperty("--thd-background", blackTheme[2]);
-    document.documentElement.style.setProperty("--main-color", blackTheme[3]);
-})
+theme.forEach(element => {
+   element.addEventListener("click", changeTheme); 
+});
 
-white.addEventListener("click", () => {
-    document.documentElement.style.setProperty("--main-background", whiteTheme[0]);
-    document.documentElement.style.setProperty("--sec-background", whiteTheme[1]);
-    document.documentElement.style.setProperty("--thd-background", whiteTheme[2]);
-    document.documentElement.style.setProperty("--main-color", whiteTheme[3]);
-})
-
-blue.addEventListener("click", () => {
-    document.documentElement.style.setProperty("--main-background", blueTheme[0])
-    document.documentElement.style.setProperty("--sec-background", blueTheme[1]);
-    document.documentElement.style.setProperty("--thd-background", blueTheme[2]);
-    document.documentElement.style.setProperty("--main-color", blueTheme[3]);
-})
-
-purple.addEventListener("click", () => {
-    document.documentElement.style.setProperty("--main-background", purpleTheme[0]);
-    document.documentElement.style.setProperty("--sec-background", purpleTheme[1]);
-    document.documentElement.style.setProperty("--thd-background", purpleTheme[2]);
-    document.documentElement.style.setProperty("--main-color", purpleTheme[3]);
-})
+function changeTheme() {
+    document.documentElement.style.setProperty("--main-background", this.dataset.mainBg);
+    document.documentElement.style.setProperty("--sec-background", this.dataset.secBg);
+    document.documentElement.style.setProperty("--thd-background", this.dataset.primaryBg);
+    document.documentElement.style.setProperty("--main-color", this.dataset.mainColor);
+    themeColor = this.id;
+    save2Local(this.id);
+};
 
 function generateText(qoute) {
     text.innerHTML = "";
@@ -104,26 +84,29 @@ function generateText(qoute) {
 
     function checkBest(e) {
         if (e > Number(highScore.innerText)) {
-            highScore.innerText = e;
-            save2Local(e);
+             score = e;
+            highScore.innerText = score;
+            save2Local();
         };
     };
 };
 
-function save2Local(best) {
+function save2Local() {
     let local;
     if (localStorage.getItem("local") === null) {
-        local = 0;
+        local = [];
     } else {
         local = JSON.parse(localStorage.getItem("local"));
-    } local = best;
+    } local = [score, themeColor];
     localStorage.setItem("local", JSON.stringify(local));
 };
 
 window.addEventListener("load", restoreLocal);
 function restoreLocal() {
     if (localStorage.getItem("local") !== null){
-    let best = JSON.parse(localStorage.getItem("local"));
-        highScore.innerText = best;
+    let local = JSON.parse(localStorage.getItem("local"));
+        highScore.innerText = local[0];
+        const id = document.getElementById(local[1]);
+        id.click();
     };
 };
