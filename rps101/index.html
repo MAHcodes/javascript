@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/LAW.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>RPS 101</title>
+</head>
+<body>
+    <header>
+        <div class="container flex">
+            <a href="http://www.umop.com/rps101.htm" target="_blank">Official Site</a>
+            <h1>RPS 101</h1>
+            <a href="http://www.umop.com/rps101/alloutcomes.htm" target="_blank">Rules</a>
+        </div>
+    </header>
+    <section class="score-board flex">
+        <div class="container">
+            <div class="scoreboard-box flex">
+                <button id="reset">
+                    <i class="fas fa-sync"></i>
+                </button>
+                <div class="user">
+                    <h3 id="user-text" class="flex">
+                        <span>User</span>
+                        <i class="far fa-edit"></i>
+                    </h3>
+                    <h2 class="score" id="user-score">00</h2>
+                </div>
+                <div class="draw">
+                    <h4>Draw</h4>
+                    <h3 class="score" id="draw">00</h3>
+                </div>
+                <div class="computer">
+                    <h3>PC</h3>
+                    <h2 class="score" id="computer-score">00</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="result hide">
+        <div class="container flex">
+            <div id="user-result" class="flex">
+                <div>
+                    <h3>You Chose: </h3>
+                    <div class="r-choice">
+                    </div>
+                </div>
+            </div>
+            <div id="result-text">
+                <h2 id="winner">You Win!</h2>
+                <button id="again">Play again</button>
+            </div>
+            <div id="computer-result">
+                <div>
+                    <h3>PC Chose: </h3>
+                    <div class="r-choice">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="choices">
+        <div class="container">
+            <div class="choice">
+                <img src="images/DYNAMITE.png" alt="DYNAMITE" value="DYNAMITE" loading="lazy">
+                <h3>DYNAMITE</h3>
+                <a href="http://www.umop.com/rps101/1.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/TORNADO.png" alt="TORNADO" value="TORNADO" loading="lazy">
+                <h3>TORNADO</h3>
+                <a href="http://www.umop.com/rps101/2.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/QUICKSAND.png" alt="QUICKSAND" value="QUICKSAND" loading="lazy">
+                <h3>QUICKSAND</h3>
+                <a href="http://www.umop.com/rps101/3.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/PIT.png" alt="PIT" value="PIT" loading="lazy">
+                <h3>PIT</h3>
+                <a href="http://www.umop.com/rps101/4.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CHAIN.png" alt="CHAIN" value="CHAIN" loading="lazy">
+                <h3>CHAIN</h3>
+                <a href="http://www.umop.com/rps101/5.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/GUN.png" alt="GUN" value="GUN" loading="lazy">
+                <h3>GUN</h3>
+                <a href="http://www.umop.com/rps101/6.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/LAW.png" alt="LAW" value="LAW" loading="lazy">
+                <h3>LAW</h3>
+                <a href="http://www.umop.com/rps101/7.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/WHIP.png" alt="WHIP" value="WHIP" loading="lazy">
+                <h3>WHIP</h3>
+                <a href="http://www.umop.com/rps101/8.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/SWORD.png" alt="SWORD" value="SWORD" loading="lazy">
+                <h3>SWORD</h3>
+                <a href="http://www.umop.com/rps101/9.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/ROCK.png" alt="ROCK" value="ROCK" loading="lazy">
+                <h3>ROCK</h3>
+                <a href="http://www.umop.com/rps101/10.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/DEATH.png" alt="DEATH" value="DEATH" loading="lazy">
+                <h3>DEATH</h3>
+                <a href="http://www.umop.com/rps101/11.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/WALL.png" alt="WALL" value="WALL" loading="lazy">
+                <h3>WALL</h3>
+                <a href="http://www.umop.com/rps101/12.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/SUN.png" alt="SUN" value="SUN" loading="lazy">
+                <h3>SUN</h3>
+                <a href="http://www.umop.com/rps101/13.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CAMERA.png" alt="CAMERA" value="CAMERA" loading="lazy">
+                <h3>CAMERA</h3>
+                <a href="http://www.umop.com/rps101/14.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/FIRE.png" alt="FIRE" value="FIRE" loading="lazy">
+                <h3>FIRE</h3>
+                <a href="http://www.umop.com/rps101/15.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CHAINSAW.png" alt="CHAINSAW" value="CHAINSAW" loading="lazy">
+                <h3>CHAINSAW</h3>
+                <a href="http://www.umop.com/rps101/16.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/SCHOOL.png" alt="SCHOOL" value="SCHOOL" loading="lazy">
+                <h3>SCHOOL</h3>
+                <a href="http://www.umop.com/rps101/17.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/SCISSORS.png" alt="SCISSORS" value="SCISSORS" loading="lazy">
+                <h3>SCISSORS</h3>
+                <a href="http://www.umop.com/rps101/18.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/POISON.png" alt="POISON" value="POISON" loading="lazy">
+                <h3>POISON</h3>
+                <a href="http://www.umop.com/rps101/19.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CAGE.png" alt="CAGE" value="CAGE" loading="lazy">
+                <h3>CAGE</h3>
+                <a href="http://www.umop.com/rps101/20.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/AXE.png" alt="AXE" value="AXE" loading="lazy">
+                <h3>AXE</h3>
+                <a href="http://www.umop.com/rps101/21.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/PEACE.png" alt="PEACE" value="PEACE" loading="lazy">
+                <h3>PEACE</h3>
+                <a href="http://www.umop.com/rps101/22.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/COMPUTER.png" alt="COMPUTER" value="COMPUTER" loading="lazy">
+                <h3>COMPUTER</h3>
+                <a href="http://www.umop.com/rps101/23.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CASTLE.png" alt="CASTLE" value="CASTLE" loading="lazy">
+                <h3>CASTLE</h3>
+                <a href="http://www.umop.com/rps101/24.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/SNAKE.png" alt="SNAKE" value="SNAKE" loading="lazy">
+                <h3>SNAKE</h3>
+                <a href="http://www.umop.com/rps101/25.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/BLOOD.png" alt="BLOOD" value="BLOOD" loading="lazy">
+                <h3>BLOOD</h3>
+                <a href="http://www.umop.com/rps101/26.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/PORCUPINE.png" alt="PORCUPINE" value="PORCUPINE" loading="lazy">
+                <h3>PORCUPINE</h3>
+                <a href="http://www.umop.com/rps101/27.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/VULTURE.png" alt="VULTURE" value="VULTURE" loading="lazy">
+                <h3>VULTURE</h3>
+                <a href="http://www.umop.com/rps101/28.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/MONKEY.png" alt="MONKEY" value="MONKEY" loading="lazy">
+                <h3>MONKEY</h3>
+                <a href="http://www.umop.com/rps101/29.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/KING.png" alt="KING" value="KING" loading="lazy">
+                <h3>KING</h3>
+                <a href="http://www.umop.com/rps101/30.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/QUEEN.png" alt="QUEEN" value="QUEEN" loading="lazy">
+                <h3>QUEEN</h3>
+                <a href="http://www.umop.com/rps101/31.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/PRINCE.png" alt="PRINCE" value="PRINCE" loading="lazy">
+                <h3>PRINCE</h3>
+                <a href="http://www.umop.com/rps101/32.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/PRINCESS.png" alt="PRINCESS" value="PRINCESS" loading="lazy">
+                <h3>PRINCESS</h3>
+                <a href="http://www.umop.com/rps101/33.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/POLICE.png" alt="POLICE" value="POLICE" loading="lazy">
+                <h3>POLICE</h3>
+                <a href="http://www.umop.com/rps101/34.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/WOMAN.png" alt="WOMAN" value="WOMAN" loading="lazy">
+                <h3>WOMAN</h3>
+                <a href="http://www.umop.com/rps101/35.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/BABY.png" alt="BABY" value="BABY" loading="lazy">
+                <h3>BABY</h3>
+                <a href="http://www.umop.com/rps101/36.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/MAN.png" alt="MAN" value="MAN" loading="lazy">
+                <h3>MAN</h3>
+                <a href="http://www.umop.com/rps101/37.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/HOME.png" alt="HOME" value="HOME" loading="lazy">
+                <h3>HOME</h3>
+                <a href="http://www.umop.com/rps101/38.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/TRAIN.png" alt="TRAIN" value="TRAIN" loading="lazy">
+                <h3>TRAIN</h3>
+                <a href="http://www.umop.com/rps101/39.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CAR.png" alt="CAR" value="CAR" loading="lazy">
+                <h3>CAR</h3>
+                <a href="http://www.umop.com/rps101/40.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/NOISE.png" alt="NOISE" value="NOISE" loading="lazy">
+                <h3>NOISE</h3>
+                <a href="http://www.umop.com/rps101/41.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/BICYCLE.png" alt="BICYCLE" value="BICYCLE" loading="lazy">
+                <h3>BICYCLE</h3>
+                <a href="http://www.umop.com/rps101/42.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/TREE.png" alt="TREE" value="TREE" loading="lazy">
+                <h3>TREE</h3>
+                <a href="http://www.umop.com/rps101/43.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/TURNIP.png" alt="TURNIP" value="TURNIP" loading="lazy">
+                <h3>TURNIP</h3>
+                <a href="http://www.umop.com/rps101/44.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/DUCK.png" alt="DUCK" value="DUCK" loading="lazy">
+                <h3>DUCK</h3>
+                <a href="http://www.umop.com/rps101/45.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/WOLF.png" alt="WOLF" value="WOLF" loading="lazy">
+                <h3>WOLF</h3>
+                <a href="http://www.umop.com/rps101/46.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CAT.png" alt="CAT" value="CAT" loading="lazy">
+                <h3>CAT</h3>
+                <a href="http://www.umop.com/rps101/47.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/BIRD.png" alt="BIRD" value="BIRD" loading="lazy">
+                <h3>BIRD</h3>
+                <a href="http://www.umop.com/rps101/48.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/FISH.png" alt="FISH" value="FISH" loading="lazy">
+                <h3>FISH</h3>
+                <a href="http://www.umop.com/rps101/49.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/SPIDER.png" alt="SPIDER" value="SPIDER" loading="lazy">
+                <h3>SPIDER</h3>
+                <a href="http://www.umop.com/rps101/50.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/COCKROACH.png" alt="COCKROACH" value="COCKROACH" loading="lazy">
+                <h3>COCKROACH</h3>
+                <a href="http://www.umop.com/rps101/51.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/BRAIN.png" alt="BRAIN" value="BRAIN" loading="lazy">
+                <h3>BRAIN</h3>
+                <a href="http://www.umop.com/rps101/52.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/COMMUNITY.png" alt="COMMUNITY" value="COMMUNITY" loading="lazy">
+                <h3>COMMUNITY</h3>
+                <a href="http://www.umop.com/rps101/53.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CROSS.png" alt="CROSS" value="CROSS" loading="lazy">
+                <h3>CROSS</h3>
+                <a href="http://www.umop.com/rps101/54.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/MONEY.png" alt="MONEY" value="MONEY" loading="lazy">
+                <h3>MONEY</h3>
+                <a href="http://www.umop.com/rps101/55.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/VAMPIRE.png" alt="VAMPIRE" value="VAMPIRE" loading="lazy">
+                <h3>VAMPIRE</h3>
+                <a href="http://www.umop.com/rps101/56.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/SPONGE.png" alt="SPONGE" value="SPONGE" loading="lazy">
+                <h3>SPONGE</h3>
+                <a href="http://www.umop.com/rps101/57.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CHURCH.png" alt="CHURCH" value="CHURCH" loading="lazy">
+                <h3>CHURCH</h3>
+                <a href="http://www.umop.com/rps101/58.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/BUTTER.png" alt="BUTTER" value="BUTTER" loading="lazy">
+                <h3>BUTTER</h3>
+                <a href="http://www.umop.com/rps101/59.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/BOOK.png" alt="BOOK" value="BOOK" loading="lazy">
+                <h3>BOOK</h3>
+                <a href="http://www.umop.com/rps101/60.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/PAPER.png" alt="PAPER" value="PAPER" loading="lazy">
+                <h3>PAPER</h3>
+                <a href="http://www.umop.com/rps101/61.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CLOUD.png" alt="CLOUD" value="CLOUD" loading="lazy">
+                <h3>CLOUD</h3>
+                <a href="http://www.umop.com/rps101/62.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/AIRPLANE.png" alt="AIRPLANE" value="AIRPLANE" loading="lazy">
+                <h3>AIRPLANE</h3>
+                <a href="http://www.umop.com/rps101/63.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/MOON.png" alt="MOON" value="MOON" loading="lazy">
+                <h3>MOON</h3>
+                <a href="http://www.umop.com/rps101/64.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/GRASS.png" alt="GRASS" value="GRASS" loading="lazy">
+                <h3>GRASS</h3>
+                <a href="http://www.umop.com/rps101/65.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/FILM.png" alt="FILM" value="FILM" loading="lazy">
+                <h3>FILM</h3>
+                <a href="http://www.umop.com/rps101/66.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/TOILET.png" alt="TOILET" value="TOILET" loading="lazy">
+                <h3>TOILET</h3>
+                <a href="http://www.umop.com/rps101/67.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/AIR.png" alt="AIR" value="AIR" loading="lazy">
+                <h3>AIR</h3>
+                <a href="http://www.umop.com/rps101/68.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/PLANET.png" alt="PLANET" value="PLANET" loading="lazy">
+                <h3>PLANET</h3>
+                <a href="http://www.umop.com/rps101/69.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/GUITAR.png" alt="GUITAR" value="GUITAR" loading="lazy">
+                <h3>GUITAR</h3>
+                <a href="http://www.umop.com/rps101/70.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/BOWL.png" alt="BOWL" value="BOWL" loading="lazy">
+                <h3>BOWL</h3>
+                <a href="http://www.umop.com/rps101/71.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/CUP.png" alt="CUP" value="CUP" loading="lazy">
+                <h3>CUP</h3>
+                <a href="http://www.umop.com/rps101/72.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/BEER.png" alt="BEER" value="BEER" loading="lazy">
+                <h3>BEER</h3>
+                <a href="http://www.umop.com/rps101/73.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/RAIN.png" alt="RAIN" value="RAIN" loading="lazy">
+                <h3>RAIN</h3>
+                <a href="http://www.umop.com/rps101/74.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/WATER.png" alt="WATER" value="WATER" loading="lazy">
+                <h3>WATER</h3>
+                <a href="http://www.umop.com/rps101/75.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/TV.png" alt="TV" value="TV" loading="lazy">
+                <h3>TV</h3>
+                <a href="http://www.umop.com/rps101/76.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/RAINBOW.png" alt="RAINBOW" value="RAINBOW" loading="lazy">
+                <h3>RAINBOW</h3>
+                <a href="http://www.umop.com/rps101/77.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/UFO.png" alt="UFO" value="UFO" loading="lazy">
+                <h3>UFO</h3>
+                <a href="http://www.umop.com/rps101/78.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/ALIEN.png" alt="ALIEN" value="ALIEN" loading="lazy">
+                <h3>ALIEN</h3>
+                <a href="http://www.umop.com/rps101/79.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/PRAYER.png" alt="PRAYER" value="PRAYER" loading="lazy">
+                <h3>PRAYER</h3>
+                <a href="http://www.umop.com/rps101/80.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/MOUNTAIN.png" alt="MOUNTAIN" value="MOUNTAIN" loading="lazy">
+                <h3>MOUNTAIN</h3>
+                <a href="http://www.umop.com/rps101/81.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/SATAN.png" alt="SATAN" value="SATAN" loading="lazy">
+                <h3>SATAN</h3>
+                <a href="http://www.umop.com/rps101/82.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/DRAGON.png" alt="DRAGON" value="DRAGON" loading="lazy">
+                <h3>DRAGON</h3>
+                <a href="http://www.umop.com/rps101/83.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/DIAMOND.png" alt="DIAMOND" value="DIAMOND" loading="lazy">
+                <h3>DIAMOND</h3>
+                <a href="http://www.umop.com/rps101/84.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/PLATINUM.png" alt="PLATINUM" value="PLATINUM" loading="lazy">
+                <h3>PLATINUM</h3>
+                <a href="http://www.umop.com/rps101/85.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/GOLD.png" alt="GOLD" value="GOLD" loading="lazy">
+                <h3>GOLD</h3>
+                <a href="http://www.umop.com/rps101/86.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/DEVIL.png" alt="DEVIL" value="DEVIL" loading="lazy">
+                <h3>DEVIL</h3>
+                <a href="http://www.umop.com/rps101/87.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/FENCE.png" alt="FENCE" value="FENCE" loading="lazy">
+                <h3>FENCE</h3>
+                <a href="http://www.umop.com/rps101/88.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/VIDEO GAME.png" alt="VIDEO GAME" value="VIDEO GAME" loading="lazy">
+                <h3>VIDEO GAME</h3>
+                <a href="http://www.umop.com/rps101/89.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/MATH.png" alt="MATH" value="MATH" loading="lazy">
+                <h3>MATH</h3>
+                <a href="http://www.umop.com/rps101/90.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/ROBOT.png" alt="ROBOT" value="ROBOT" loading="lazy">
+                <h3>ROBOT</h3>
+                <a href="http://www.umop.com/rps101/91.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/HEART.png" alt="HEART" value="HEART" loading="lazy">
+                <h3>HEART</h3>
+                <a href="http://www.umop.com/rps101/92.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/ELECTRICITY.png" alt="ELECTRICITY" value="ELECTRICITY" loading="lazy">
+                <h3>ELECTRICITY</h3>
+                <a href="http://www.umop.com/rps101/93.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/LIGHTNING.png" alt="LIGHTNING" value="LIGHTNING" loading="lazy">
+                <h3>LIGHTNING</h3>
+                <a href="http://www.umop.com/rps101/94.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/MEDUSA.png" alt="MEDUSA" value="MEDUSA" loading="lazy">
+                <h3>MEDUSA</h3>
+                <a href="http://www.umop.com/rps101/95.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/POWER.png" alt="POWER" value="POWER" loading="lazy">
+                <h3>POWER</h3>
+                <a href="http://www.umop.com/rps101/96.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/LASER.png" alt="LASER" value="LASER" loading="lazy">
+                <h3>LASER</h3>
+                <a href="http://www.umop.com/rps101/97.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/NUKE.png" alt="NUKE" value="NUKE" loading="lazy">
+                <h3>NUKE</h3>
+                <a href="http://www.umop.com/rps101/98.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/SKY.png" alt="SKY" value="SKY" loading="lazy">
+                <h3>SKY</h3>
+                <a href="http://www.umop.com/rps101/99.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/TANK.png" alt="TANK" value="TANK" loading="lazy">
+                <h3>TANK</h3>
+                <a href="http://www.umop.com/rps101/100.htm" target="_blank">?</a>
+            </div>
+            <div class="choice">
+                <img src="images/HELICOPTER.png" alt="HELICOPTER" value="HELICOPTER" loading="lazy">
+                <h3>HELICOPTER</h3>
+                <a href="http://www.umop.com/rps101/101.htm" target="_blank">?</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container flex">
+            <h3>Mhmd Ali Hsen &copy; 2021 - All Rights Reserved</h3>
+            <div class="social flex">
+                <a href="https://github.com/mhmdali102" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/mhmdali.hsen" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:mhmdalihsen@mail.ru" target="_blank"><i class="far fa-envelope"></i></a>
+                <a href="https://twitter.com/MhmdAliHsen" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/mhmd-ali-hsen-66b0671b7/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

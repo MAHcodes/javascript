@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Poppins:wght@200;400&display=swap');
+:root {
+    --white: #fff;
+    --dark-blue: rgb(20, 20, 36);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: #ccf;
+    color: var(--dark-blue);
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1720px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+h4 {
+    font-size: .75rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background-color: var(--white);
+    color: var(--dark-blue);
+    padding: 1em;
+}
+
+header .container {
+    width: 100%;
+    justify-content: space-between;
+}
+
+header .container a {
+    color: var(--dark-blue);
+    text-decoration: none;
+}
+
+.score-board {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.scoreboard-box {
+    border: 1px var(--white) solid;
+    padding: 2rem;
+    margin: 3rem;
+    position: relative;
+    border-radius: 5px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.score-board button {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark-blue);
+    border: 1px solid var(--white);
+    padding: .5em;
+    outline: 5px solid var(--dark-blue);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 500ms;
+}
+
+.scoreboard-box button i {
+    color: var(--white);
+    pointer-events: none;
+    transition: 500ms;
+    padding: 0 .5em;
+}
+
+.scoreboard-box button:hover,
+.scoreboard-box button:active {
+    background-color: rgb(45, 45, 60);
+}
+
+.scoreboard-box button:hover i,
+.scoreboard-box button:active i {
+    transform: rotateZ(45deg) scale(1.125);
+}
+
+.result {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.result .container {
+    justify-content: space-around;
+}
+
+#again {
+    cursor: pointer;
+    color: var(--white);
+    background-color: rgb(50, 50, 85);
+    border: none;
+    padding: 1em;
+    border-radius: 4px;
+    margin-top: 4rem;
+}
+
+#again:hover,
+#again:active {
+    background-color: var(--dark-blue);
+}
+
+#user-text {
+    cursor: pointer;
+}
+
+#user-text span {
+    margin-right: 6px;
+}
+
+#user-text i {
+    font-size: .65em;
+}
+
+.score {
+    font-family: 'Cute Font', cursive;
+}
+
+#computer-score, #user-score {
+    font-size: 3.5rem;
+}
+
+#draw {
+    font-size: 2.5rem;
+    padding: .1em 1em;
+    border: 1px solid;
+    border-color: transparent #ffffff45;
+}
+
+.scoreboard-box > div {
+    margin: 1rem;
+}
+
+.choices {
+    background-color: var(--dark-blue);
+    padding: 2rem 0;
+}
+
+.choices .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+.choice,
+.r-choice {
+    padding: 1.5rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 4px;
+    color: var(--white);
+    transform: 500ms;
+}
+
+.choice {
+    cursor: pointer;
+    background-color: rgb(38, 38, 73);
+    position: relative;
+}
+
+.choice a {
+    position: absolute;
+    color: var(--white);
+    top: 0;
+    right: 5px;
+    cursor: help;
+    text-decoration: none;
+    opacity: .75;
+    transition: 500ms;
+}
+
+.choice a:hover {
+    transform: scale(1.5);
+    opacity: 1;
+    font-weight: bold;
+}
+
+.choice img,
+.r-choice img {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 1.5rem;
+    filter: opacity(.75);
+    transition: 500ms;  
+}
+
+.choice:hover img,
+.choice:active img,
+.r-choice img {
+    filter: opacity(1) drop-shadow(0 0 2px #ffffff70);
+}
+
+.choice:hover,
+.choice:active,
+.r-choice {
+    background-color: #323255;
+    box-shadow: 0px 0px 20px 0 #ffffff15,
+    inset 0px 0px 7px 0 #00000090;
+}
+
+.choice:hover h3,
+.choice:active h3 {
+    font-weight: normal;
+}
+
+.choice h3,
+.r-choice {
+    font-weight: 200;
+}
+
+footer {
+    background-color: #ffffff;
+}
+
+footer .container {
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.social {
+    padding: .5rem 0 0 0;
+}
+
+.social a {
+    color: var(--dark-blue);
+
+}
+
+.social a + a {
+    margin-left: 1.4em
+}
+
+.social i {
+    transition: 250ms;
+}
+
+.social a:hover i {
+    color: #4800ce;
+    transform: scale(1.2);
+}
+
+.hide {
+    display: none;
+}
+
+@media only screen and (max-width:400px) {
+    :root {
+        font-size: 13px;
+    }    
+}
