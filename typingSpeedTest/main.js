@@ -93,6 +93,7 @@ function generateText(qoute) {
             wpmText.innerText = Math.floor(wpm);
             cpmText.innerText = Math.floor(cpm);
             checkBest(Math.floor(wpm));
+            againBtn.focus();
             document.removeEventListener("keydown", keydown);
             return;
         };
