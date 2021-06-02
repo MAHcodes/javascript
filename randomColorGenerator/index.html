@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Color Generator</title>
+</head>
+<body>
+    <div class="container">
+        <div id="toast" class="hide">
+            <i id="copy-icon" class="far fa-copy"></i>
+            <div class="toast-text">
+                <p id="copied-title"></p>   
+                <span>Copied to your clipboard!</span>
+            </div>  
+            <i id="times" class="fas fa-times"></i>
+        </div>
+        <div class="content" id="content">
+        <div class="instagram">
+            <a href="https://www.instagram.com/mhmdali.hsen/" title="Follow Me" target="_blank">
+            <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+            <h1 id="title" class="tag" title="Copy to clipboard!">#FFFFFF</h1>
+            <div class="items">
+                <div class="select">
+                    <select id="type" title="Choose color type">
+                        <option value="hex">HEX</option>
+                        <option value="css">CSS</option>
+                        <option value="rgb">RGB</option>
+                        <option value="hsl">HSL</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+                <input type="color" id="color" class="hide" title="Pick a custom color">
+                <button id="generate" title="Generate random color">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button id="favorite" title="Save color to favorites">
+                    <i class="far fa-star"></i>
+                </button>
+            </div>
+        </div>
+        <div id="favorites">
+            <div id="favorite-text">
+                <h2>No favorite colors</h2>
+                <h3>Press&nbsp;&nbsp;<span><i class="far fa-star"></i>&nbsp;&nbsp;to add a favorite</span></h3>
+            </div>
+            <div class="trash-container hide"><i class="trash fas fa-trash" id="trash" title="Delete all favorites"></i></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
