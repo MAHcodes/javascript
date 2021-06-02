@@ -17,7 +17,7 @@ againBtn.addEventListener("click", generateQuote);
 
 let qoute; 
 function generateQuote() {
-    fetch("http://api.quotable.io/random")
+    fetch("https://api.quotable.io/random")
     .then(response => response.json())
     .then(data =>  quote = data.content)
     .then(generateText);
