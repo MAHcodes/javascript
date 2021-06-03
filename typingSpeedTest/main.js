@@ -6,8 +6,6 @@ const againBtn = document.getElementById("again");
 const highScore = document.getElementById("best");
 const theme = document.querySelectorAll(".colors span");
 let themeColor = "";
-let score = "00";
-
 
 againBtn.addEventListener("click", generateQuote);
 
@@ -30,7 +28,7 @@ function changeTheme() {
     document.documentElement.style.setProperty("--thd-background", this.dataset.primaryBg);
     document.documentElement.style.setProperty("--main-color", this.dataset.mainColor);
     themeColor = this.id;
-    save2Local(this.id);
+    save2Local();
 };
 
 function generateText(qoute) {
@@ -84,8 +82,7 @@ function generateText(qoute) {
 
     function checkBest(e) {
         if (e > Number(highScore.innerText)) {
-             score = e;
-            highScore.innerText = score;
+            highScore.innerText = e;
             save2Local();
         };
     };
@@ -97,7 +94,7 @@ function save2Local() {
         local = [];
     } else {
         local = JSON.parse(localStorage.getItem("local"));
-    } local = [score, themeColor];
+    } local = [highScore.innerText, themeColor];
     localStorage.setItem("local", JSON.stringify(local));
 };
 
