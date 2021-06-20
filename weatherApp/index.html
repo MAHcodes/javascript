@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="overlay"></div>
+    <video  class="background" autoplay muted loop>
+    <source src="media/ezgif.com-gif-maker.mp4" type="video/mp4">
+    </video>
+   <div class="wrap">
+    <div class="container flex" >
+        <div class="date">
+            <h2><span id="time">Time</span></h2>
+            <h2><span id="date">Date</span></h2>
+            <input type="text" placeholder="Search By City" id="search">
+        </div> 
+        <div class="top flex">
+            <div class="icon">
+                <img src="" alt="status" id="icon">
+                <h2 id="status">Status</h2>
+            </div>
+            <div class="text">
+                <h2>Today</h2>
+                <h1 class="temp"><span id="temp"></span>&deg;c</h1>
+                <h2 id="location">Location</h2>
+            </div>
+        </div>
+        <div class="info flex">
+            <div class="card">
+                <h4>Min Temp:</h4>
+                <h3><span id="min"></span>&deg;c</h3>
+            </div>
+            <div class="card">
+                <h4>Max Temp:</h4>
+                <h3><span id="max"></span>&deg;c</h3>
+            </div>
+            <div class="card">
+                <h4>Avg Temp:</h4>
+                <h3><span id="avg"></span>&deg;c</h3>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
