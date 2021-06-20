@@ -115,7 +115,6 @@ function rps(e) {
     pcDiv.appendChild(pcImg);
     pcDiv.appendChild(pcH3);
 
-    console.log(choices.indexOf(userChoice), pcChoice);
     updateScore();
     save2Local();
 }
