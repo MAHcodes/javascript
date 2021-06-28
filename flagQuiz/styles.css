@@ -22,6 +22,7 @@ html {
     max-width: 1440px;
     padding: 1.5rem;
     margin: 0 auto;
+    min-height: calc(100vh - 5rem);
 }
 
 .score-board h3 {
@@ -64,6 +65,7 @@ input[type="text"] {
 
 input[type="text"] {
     cursor: text;
+    margin-bottom: 2rem;
 }
 
 input[type="text"]:focus {
@@ -105,10 +107,6 @@ label {
 }
 
 .share {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background-color: var(--white);
     color: var(--main-dark);
     padding: .5rem;

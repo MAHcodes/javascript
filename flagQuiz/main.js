@@ -98,3 +98,5 @@ function restoreLocal() {
         score.innerText = localStorage.getItem("flagScore");
     };
 };
+
+console.log(document.querySelector(".share"))
