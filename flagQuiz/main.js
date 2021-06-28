@@ -25,7 +25,6 @@ fetch("./response.json")
 .then(response => response.json())
 .then(data => {
     allCountries = data;
-    console.log(allCountries)
     allCountries.forEach(country => {
     const option = document.createElement("option");
     option.value = country.name;
@@ -40,7 +39,6 @@ function generateRandomFlag() {
     flag.src = allCountries[randomNum].flag;
     theCountry = allCountries[randomNum].name;
 
-    console.log(allCountries[randomNum]);  // DEBUGG;
 };
 
 function skipFlag() {
@@ -72,10 +70,10 @@ function getHint() {
 
 function checkInput() {
     if (user.value.toLowerCase() == theCountry.toLowerCase()) {
-        console.log("Win!");
+        console.log("Win!"); // DEBUGGG
         win();   
     } else {
-        console.log("Lost!")       
+        console.log("Lost!")      // DEBUGGG 
     };
     user.value = "";
     user.focus();
@@ -90,10 +88,13 @@ score.innerText = scoreValue;
 };
 
 function save2Local() {
-    localStorage.setItem("score", scoreValue);
+    localStorage.setItem("flagScore", scoreValue);
 };
 
 function restoreLocal() {
-    scoreValue = localStorage.getItem("score");
-    score.innerText = scoreValue;
+    if (localStorage.getItem("flagScore") == null) {
+        scoreValue = 5;
+    } else {
+        score.innerText = localStorage.getItem("flagScore");
+    };
 };
