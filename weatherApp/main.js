@@ -28,22 +28,22 @@ function getWeather() {
         city = "Lebanon";
     };
     const url = `http://api.weatherstack.com/forecast?access_key=${api_key}&query=${city}`;
-    fetch(url).then(respone => {return respone.json()})
-    .then(data => {
-        const fullDate = data.location.localtime;
-        const splitDate = fullDate.split(" ");
-        date.innerText = splitDate[0];
-        time.innerText = splitDate[1];
-        ico.src = data.current.weather_icons;
-        temp.innerText = data.current.temperature;
-        locations.innerText = data.request.query;
-        let forecastDate = splitDate[0].split("-");
-        let resultDate = forecastDate[forecastDate.length -1 ] -1;
-        let last = (forecastDate[0] + "-" + forecastDate[1] + "-" + resultDate);
-        min.innerText = data.forecast[last].mintemp;
-        max.innerText = data.forecast[last].maxtemp;
-        avg.innerText = data.forecast[last].avgtemp;
-        status.innerText = data.current.weather_descriptions;
-    })
-    .catch(err => console.error("error"));
+    fetch(url).then(respone => { return respone.json() })
+        .then(data => {
+            const fullDate = data.location.localtime;
+            const splitDate = fullDate.split(" ");
+            date.innerText = splitDate[0];
+            time.innerText = splitDate[1];
+            ico.src = data.current.weather_icons;
+            temp.innerText = data.current.temperature;
+            locations.innerText = data.request.query;
+            let forecastDate = splitDate[0].split("-");
+            let resultDate = forecastDate[forecastDate.length - 1] - 1;
+            let last = (forecastDate[0] + "-" + forecastDate[1] + "-" + resultDate);
+            min.innerText = data.forecast[last].mintemp;
+            max.innerText = data.forecast[last].maxtemp;
+            avg.innerText = data.forecast[last].avgtemp;
+            status.innerText = data.current.weather_descriptions;
+        })
+        .catch(err => console.error("error"));
 }
