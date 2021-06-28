@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+:root {
+    --white: #dde;
+    --main-dark: #223;
+}
+
+html {
+    font-family: Lato, sans-serif;
+    background-color: var(--main-dark);
+    color: var(--white);
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+.score-board h3 {
+    margin: 2rem auto;
+    font-size: 1rem;
+}
+
+.title {
+    font-weight: 300;
+}
+
+.score-board #score {
+    font-size: 3rem;
+}
+
+button{
+    color: var(--white);
+    background-color: transparent;
+    border: 1px solid var(--white);
+}
+
+button + button {
+    margin-left: .5em;
+}
+
+input[type="submit"],
+input[type="text"] {
+    background-color: var(--white);
+    color: var(--main-dark);
+    border: none;
+}
+
+button, 
+input[type="submit"],
+input[type="text"] {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: .5em 1em;
+} 
+
+input[type="text"] {
+    cursor: text;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+
+button:hover {
+   background-color: #ddddee10; 
+   color: #fff;
+   border-color: #fff;
+   box-shadow: 2px 3px 10px 0 #ffffff20;
+}
+
+input[type="submit"]:hover,
+input[type="text"]:focus {
+    background-color: #c3c3d6;
+    color: #002;
+   box-shadow: 2px 3px 10px 0 #ffffff25;
+}
+
+.img-container {
+    margin: 2.5rem auto;
+    overflow: hidden;
+    width: 250px;
+}
+
+#flag {
+    width: 250px;
+}
+
+#flag {
+    width: 250px;
+}
+
+label {
+    display: block;
+    margin-bottom: 2em;
+}
+
+.share {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    color: var(--main-dark);
+    padding: .5rem;
+}
+
+.share h5 {
+    margin: .5em auto;
+}
+
+.share h5 > span {
+    font-size: 1.5em;
+    padding: 0 .2em;
+}
+
+.social-icon {
+    width: 70px;
+}
+
+.social-icon:hover {
+    filter: drop-shadow(0 0 4px #00000080);
+}

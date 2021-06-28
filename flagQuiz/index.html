@@ -1,0 +1,36 @@
+<!DOCTYPE html> <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Flags Quiz Game</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Guess The Flag!</h1>
+    <div class="score-board">
+      <h3>Your Score:<br><br><span id="score">05</span></h3>
+      <div class="actions">
+        <button title="Skip" id="skip">Skip</button>
+        <button title="Hint" id="hint">Hint</button>
+      </div>
+    </div>
+    <div class="img-container">
+      <img src="" alt="flag" id="flag">
+    </div>
+    <label id="flag"></label>
+    <input type="text" id="country-name" list="countries" placeholder="Guess Country Name:">
+    <input type="submit" value="Guess" id="fire">
+    <datalist id="countries">
+    </datalist>
+    <div class="share">
+      <h5>Share your score and get <span>4</span> points now!</h5>
+      <a href="https://www.facebook.com/share.php?u=flagquiz&quote="><img class="social-icon" src="images/facebook.svg" alt="share on facebook"></a>
+      <a href="whatsapp://send?text=Your message here" data-action="share/whatsapp/share" target="_blank"><img class="social-icon" src="images/whatsapp.svg" alt="share on whatsapp"></a>
+      <a href="https://twitter.com/share?text=" target="_blank"><img class="social-icon" src="images/twitter.svg" alt="share on twitter"></a>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
