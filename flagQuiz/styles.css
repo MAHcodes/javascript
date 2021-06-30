@@ -23,6 +23,8 @@ html {
     padding: 1.5rem;
     margin: 0 auto;
     min-height: calc(100vh - 5rem);
+    position: relative;
+    overflow: hidden;
 }
 
 .score-board h3 {
@@ -127,4 +129,41 @@ label {
 
 .social-icon:hover {
     filter: drop-shadow(0 0 4px #00000080);
+}
+
+#toast {
+    background-color: var(--white);
+    color: var(--main-dark);
+    padding: 1rem;
+    border-radius: 5px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transform: translateX(150%);
+    transition: 500ms;
+    box-shadow: 5px 5px 20px #00000080;
+}
+
+#toast.show {
+    transform: translateX(0);
+}
+
+#toast p {
+    margin: .25em 1em;
+    line-height: 2em;
+}
+
+#x {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transform: rotate(45deg);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#x:hover {
+    box-shadow: 0 0 10px #00000030;
 }

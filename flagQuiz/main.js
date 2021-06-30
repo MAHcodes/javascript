@@ -8,6 +8,11 @@ const skipBtn = document.getElementById("skip");
 const fbBtn = document.getElementById("share-facebook");
 const wpBtn = document.getElementById("share-whatsapp");
 const twBtn = document.getElementById("share-twitter");
+const toast = document.getElementById("toast");
+const xBtn  = document.getElementById("x");
+const taostCountryName = document.getElementById("toast-country-name");
+const taostCountryCapital = document.getElementById("toast-country-capital");
+const toastTitle = document.getElementById("toast-title");
 
 let allCountries = null;
 let theCountry = null;
@@ -24,6 +29,7 @@ skipBtn.addEventListener("click", skipFlag);
 wpBtn.addEventListener("click", shareWhatsapp);
 fbBtn.addEventListener("click", shareFacebook);
 twBtn.addEventListener("click", shareTwitter);
+xBtn.addEventListener("click", () => toast.classList.remove("show"));
 user.addEventListener("keypress", (e) => {
     if (e.keyCode === 13 && e.key == "Enter") {
         fireBtn.click();
@@ -47,7 +53,6 @@ function generateRandomFlag() {
     randomNum = Math.floor(Math.random() * allCountries.length);
     flag.src = allCountries[randomNum].flag;
     theCountry = allCountries[randomNum].name;
-
 };
 
 function skipFlag() {
@@ -79,22 +84,36 @@ function getHint() {
 
 function checkInput() {
     if (user.value.toLowerCase() == theCountry.toLowerCase()) {
-        alert(`Correct!\nCountry: ${allCountries[randomNum].name}\nCapital: ${allCountries[randomNum].capital}`)
         win();   
     } else {
-        console.log("Lost!")      // DEBUGGG 
+        user.style.border = "1px solid red";
     };
     user.value = "";
     user.focus();
 };
 
 function win() {
+    toastTitle.innerText = "Correct!"
+    taostCountryName.innerText = allCountries[randomNum].name;
+    taostCountryCapital.innerText = allCountries[randomNum].capital;
+
+    user.style.border = "none";
+    showToast();
     scoreValue++;
     score.innerText = scoreValue;
     ifNewCountry = true;
     generateRandomFlag();
     save2Local();
     updateUrl();
+};
+
+function showToast() {
+    toast.classList.add("show");
+    toast.addEventListener("transitionend", () => {
+        setTimeout(() => {
+            toast.classList.remove("show")
+        }, 2000)
+    });
 };
 
 function save2Local() {
