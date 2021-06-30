@@ -79,7 +79,7 @@ function getHint() {
 
 function checkInput() {
     if (user.value.toLowerCase() == theCountry.toLowerCase()) {
-        console.log("Win!"); // DEBUGGG
+        alert(`Correct!\nCountry: ${allCountries[randomNum].name}\nCapital: ${allCountries[randomNum].capital}`)
         win();   
     } else {
         console.log("Lost!")      // DEBUGGG 
