@@ -136,21 +136,31 @@ label {
     color: var(--main-dark);
     padding: 1rem;
     border-radius: 5px;
-    position: absolute;
+    position: fixed;
     top: 1rem;
     right: 1rem;
     transform: translateX(150%);
     transition: 500ms;
     box-shadow: 5px 5px 20px #00000080;
+    z-index: 1000;
 }
 
 #toast.show {
     transform: translateX(0);
 }
 
+#toast > h2 {
+    color: #098c09;
+}
+
 #toast p {
     margin: .25em 1em;
     line-height: 2em;
+    font-weight: lighter;
+}
+
+#toast span {
+    font-weight: bold;
 }
 
 #x {

@@ -12,7 +12,6 @@ const toast = document.getElementById("toast");
 const xBtn  = document.getElementById("x");
 const taostCountryName = document.getElementById("toast-country-name");
 const taostCountryCapital = document.getElementById("toast-country-capital");
-const toastTitle = document.getElementById("toast-title");
 
 let allCountries = null;
 let theCountry = null;
@@ -86,14 +85,12 @@ function checkInput() {
     if (user.value.toLowerCase() == theCountry.toLowerCase()) {
         win();   
     } else {
-        user.style.border = "1px solid red";
+        user.style.border = "2px solid red";
     };
     user.value = "";
-    user.focus();
 };
 
 function win() {
-    toastTitle.innerText = "Correct!"
     taostCountryName.innerText = allCountries[randomNum].name;
     taostCountryCapital.innerText = allCountries[randomNum].capital;
 
