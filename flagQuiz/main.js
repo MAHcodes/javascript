@@ -55,9 +55,9 @@ function generateRandomFlag() {
 };
 
 function skipFlag() {
-    if (scoreValue >= 3) {
-        if (confirm("Skip Flag For 3 Points?")) {
-            scoreValue -= 3;
+    if (scoreValue >= 2) {
+        if (confirm("Skip Flag For 2 Points?")) {
+            scoreValue -= 2;
             score.innerText = scoreValue;
             win();
         };
