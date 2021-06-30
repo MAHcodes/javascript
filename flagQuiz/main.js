@@ -109,7 +109,7 @@ function showToast() {
     toast.addEventListener("transitionend", () => {
         setTimeout(() => {
             toast.classList.remove("show")
-        }, 2000)
+        }, 3000)
     });
 };
 
