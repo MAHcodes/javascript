@@ -12,6 +12,7 @@ const toast = document.getElementById("toast");
 const xBtn  = document.getElementById("x");
 const taostCountryName = document.getElementById("toast-country-name");
 const taostCountryCapital = document.getElementById("toast-country-capital");
+const socialBtn = document.querySelector("#social-toggle");
 
 let allCountries = null;
 let theCountry = null;
@@ -28,6 +29,13 @@ skipBtn.addEventListener("click", skipFlag);
 wpBtn.addEventListener("click", shareWhatsapp);
 fbBtn.addEventListener("click", shareFacebook);
 twBtn.addEventListener("click", shareTwitter);
+socialBtn.addEventListener("click", () => {
+    const socialContainer = document.querySelector(".social-container");
+    socialContainer.classList.toggle("open");
+    const socialBtnIcon = document.querySelector("#social-toggle > i");
+    socialBtnIcon.classList.toggle("fa-caret-right");
+    socialBtnIcon.classList.toggle("fa-caret-left");
+});
 xBtn.addEventListener("click", () => toast.classList.remove("show"));
 user.addEventListener("keypress", (e) => {
     if (e.keyCode === 13 && e.key == "Enter") {
@@ -109,7 +117,7 @@ function showToast() {
     toast.addEventListener("transitionend", () => {
         setTimeout(() => {
             toast.classList.remove("show")
-        }, 3000)
+        }, 3500)
     });
 };
 

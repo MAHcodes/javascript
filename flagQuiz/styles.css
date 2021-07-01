@@ -154,7 +154,7 @@ label {
 }
 
 #toast p {
-    margin: .25em 1em;
+    margin: .5em 1.5em 0;
     line-height: 2em;
     font-weight: lighter;
 }
@@ -176,4 +176,81 @@ label {
 
 #x:hover {
     box-shadow: 0 0 10px #00000030;
+}
+
+.social-container {
+    position: fixed;
+    background-color: var(--white);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    color: var(--main-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    padding: 1em;
+    transition: 500ms;
+    transform: translateX(-100%);
+}
+
+.social-container.open {
+    transform: translateX(0);
+}
+
+.social-container > h3 {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    text-transform: uppercase;
+}
+
+.social-container .social {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-container .social a {
+    color: var(--main-dark);
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 500ms;
+    text-decoration: none;
+}
+
+.social-container .social a + a {
+    margin-top: 1rem;
+}
+
+.social-container .social a:hover,
+.social-container .social a:active {
+    background-color: var(--main-dark);
+    color: var(--white);
+    font-size: 1.25em;
+}
+
+.social-container #social-toggle {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-color: var(--white);
+    transform: translate(100%, -50%);
+    border-radius: 0 50% 50% 0;
+    z-index: -1;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: lighter;
+    color: var(--main-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms;
+    border: none;
 }
