@@ -129,7 +129,8 @@ footer .container {
     margin-left: 1em;
 }
 
-.social a:hover {
+.social a:hover,
+.socia a:active {
     background-color: var(--main-color);
     color: var(--sec-background);
     transform: scale(1.25);
