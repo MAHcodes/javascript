@@ -99,8 +99,7 @@ input[type="text"]:focus {
     outline: none;
 }
 
-
-button:hover {
+.actions button:hover {
    background-color: var(--dark-shadow); 
    color: var(--light-shadow);
    border-color: var(--light-shadow);
