@@ -45,5 +45,5 @@ function getWeather() {
             avg.innerText = data.forecast[last].avgtemp;
             status.innerText = data.current.weather_descriptions;
         })
-        .catch(err => console.error("error"));
+        .catch(err => console.error(err));
 }

@@ -260,7 +260,7 @@ footer .container {
 
 .social a {
     color: var(--dark-blue);
-
+    text-decoration: none;
 }
 
 .social a + a {
@@ -268,12 +268,19 @@ footer .container {
 }
 
 .social i {
-    transition: 250ms;
+    transition: 500ms;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .social a:hover i {
-    color: #4800ce;
-    transform: scale(1.2);
+    color: var(--white);
+    font-size: 1.25em;
+    background-color: var(--dark-blue);
 }
 
 .hide {
