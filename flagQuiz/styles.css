@@ -49,7 +49,7 @@ html {
 }
 
 #theme.toggle {
-    transform: rotate(540deg);
+    transform: rotate(360deg);
 }
 
 .score-board h3 {

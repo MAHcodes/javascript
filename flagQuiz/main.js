@@ -101,6 +101,8 @@ function checkInput() {
 };
 
 function changeTheme() {
+    const metaTheme = document.getElementById("meta-theme");
+    metaTheme.content == "#223" ? metaTheme.content = "#dde" : metaTheme.content = "#223";
     theme.classList.toggle('toggle');
     document.documentElement.classList.toggle("dark-theme");
     document.documentElement.classList.toggle("light-theme");
