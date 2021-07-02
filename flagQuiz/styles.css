@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 
-:root {
+.dark-theme {
     --white: #dde;
     --main-dark: #223;
+    --dark-shadow: #ddddee10;
+    --light-shadow: #c3c3d6;
+}
+
+.light-theme {
+    --white: #223;
+    --main-dark: #dde;
+    --dark-shadow: #c3c3d6;
+    --light-shadow: #333344;
 }
 
 html {
@@ -10,6 +19,7 @@ html {
     background-color: var(--main-dark);
     color: var(--white);
     text-align: center;
+    transition: 1000ms;
 }
 
 * {
@@ -25,6 +35,21 @@ html {
     min-height: calc(100vh - 5rem);
     position: relative;
     overflow: hidden;
+}
+
+#theme {
+    position: fixed;
+    top: .75rem;
+    left: calc(100% + .75rem);
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+    z-index: 1000;
+    color: var(--white);
+}
+
+#theme.toggle {
+    transform: rotate(540deg);
 }
 
 .score-board h3 {
@@ -76,17 +101,17 @@ input[type="text"]:focus {
 
 
 button:hover {
-   background-color: #ddddee10; 
-   color: #fff;
-   border-color: #fff;
-   box-shadow: 2px 3px 10px 0 #ffffff20;
+   background-color: var(--dark-shadow); 
+   color: var(--light-shadow);
+   border-color: var(--light-shadow);
+   box-shadow: 2px 3px 10px 0 var(--dark-shadow);
 }
 
 input[type="submit"]:hover,
 input[type="text"]:focus {
-    background-color: #c3c3d6;
-    color: #002;
-   box-shadow: 2px 3px 10px 0 #ffffff25;
+    background-color: var(--light-shadow);
+    color: var(--main-dark);
+   box-shadow: 2px 3px 10px 0 var(--dark-shadow);
 }
 
 .img-container {

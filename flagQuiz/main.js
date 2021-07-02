@@ -13,6 +13,7 @@ const xBtn  = document.getElementById("x");
 const taostCountryName = document.getElementById("toast-country-name");
 const taostCountryCapital = document.getElementById("toast-country-capital");
 const socialBtn = document.querySelector("#social-toggle");
+const theme = document.getElementById("theme");
 
 let allCountries = null;
 let theCountry = null;
@@ -29,6 +30,7 @@ skipBtn.addEventListener("click", skipFlag);
 wpBtn.addEventListener("click", shareWhatsapp);
 fbBtn.addEventListener("click", shareFacebook);
 twBtn.addEventListener("click", shareTwitter);
+theme.addEventListener("click",  changeTheme);
 socialBtn.addEventListener("click", () => {
     const socialContainer = document.querySelector(".social-container");
     socialContainer.classList.toggle("open");
@@ -96,6 +98,12 @@ function checkInput() {
         user.style.border = "2px solid red";
     };
     user.value = "";
+};
+
+function changeTheme() {
+    theme.classList.toggle('toggle');
+    document.documentElement.classList.toggle("dark-theme");
+    document.documentElement.classList.toggle("light-theme");
 };
 
 function win() {
